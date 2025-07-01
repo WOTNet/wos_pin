@@ -2,7 +2,7 @@ This repo contains an attempt to create a extremely lightweight compile-time MCU
 
 This project was is inspired by Zephyr's pretty incredible compile-time DTS system.
 
-From the included example pin configuration, GPIOs, a UART and an I2C bus are configured using a DSL based on X-macros as follows:
+From the included example pin configuration, GPIOs, a UART and an I2C bus are configured using a DSL based on [X-macros](https://en.wikipedia.org/wiki/X_macro) as follows:
 
 ```
 #define WOS_PIN_PAD_LIST_STM8S003(X)                                           \
@@ -66,4 +66,6 @@ UART 0 (UART_LIDAR), baud: 9600, rx pin: 3, tx pin: 2
 I2C bus 1 (I2C_IMU), speed: 400K, sda pin: 11, scl pin: 12
 ```
 
-A real BSP implementation would be simple to write for any given platform - in this case `WOS_PIN_PAD_LIST` was set up for STM8. 
+A real BSP implementation would be simple to write for any given platform - in this case `WOS_PIN_PAD_LIST` was set up for [STM8](https://www.st.com/resource/en/datasheet/stm8s003f3.pdf). 
+
+The [expanded X-macros](https://github.com/WOTNet/wos_pin/blob/main/gen/wos_pin_enums.c.i) are in the `gen` folder, it is around 4000 lines of fairly unpleaseant-looking code. It uses `X.h` and `X_enum.h` from [my macro library](https://github.com/wideopensource/oneletter).
