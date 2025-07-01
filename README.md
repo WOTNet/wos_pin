@@ -1,6 +1,6 @@
 This repo contains an attempt to create a extremely lightweight compile-time MCU pin configuration framework using nothing but standard C macros. 
 
-This project was is inspired by Zephyr's pretty incredible compile-time DTS system.
+This project was is inspired by Zephyr's pretty incredible compile-time Device Tree, although the only thing it shares is the very heavy use of macros.
 
 From the included example pin configuration, GPIOs, a UART and an I2C bus are configured using a DSL based on [X-macros](https://en.wikipedia.org/wiki/X_macro) as follows:
 
